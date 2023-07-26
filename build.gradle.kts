@@ -5,4 +5,5 @@ plugins {
     id("com.google.gms.google-services") version "4.3.15" apply false
     id("com.google.firebase.crashlytics") version "2.9.7" apply false
     id("com.google.dagger.hilt.android") version "2.44" apply false
+    id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
 }
