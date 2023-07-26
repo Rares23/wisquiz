@@ -7,6 +7,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavOptions
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.crxapplications.wisquiz.core.navigation.Route
@@ -24,7 +26,12 @@ fun HomeScreen() {
             HomeBottomNavigationBar(currentPageRoute = navBackStackEntry?.destination?.route
                 ?: Route.Quizzes.route,
                 onMenuItemPress = { route ->
-                    navController.navigate(route.route)
+                    navController.navigate(
+                        route.route
+                    ) {
+                        launchSingleTop = true
+                        popUpTo(navController.graph.findStartDestination().id)
+                    }
                 })
         },
     ) { padding ->
