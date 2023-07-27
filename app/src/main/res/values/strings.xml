@@ -3,4 +3,5 @@
     <string name="quizzes_page_bottom_nav_label">Quizzes</string>
     <string name="progress_page_bottom_nav_label">Progress</string>
     <string name="home_page_bottom_nav_item_content_description">%1$s Icon</string>
+    <string name="settings_icon_cd">Settings Icon</string>
 </resources>

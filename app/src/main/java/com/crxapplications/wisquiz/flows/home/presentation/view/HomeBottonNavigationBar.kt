@@ -35,17 +35,12 @@ fun HomeBottomNavigationBar(
     )
 
     NavigationBar(
-        containerColor = MaterialTheme.colorScheme.primary,
+        containerColor = MaterialTheme.colorScheme.surface,
     ) {
         bottomNavItems.forEach { item ->
             NavigationBarItem(
                 selected = currentPageRoute == item.route.route,
                 onClick = { onMenuItemPress(item.route) },
-                colors = NavigationBarItemDefaults.colors(
-                    indicatorColor = MaterialTheme.colorScheme.primaryContainer.withOpacity(0.9f),
-                    selectedIconColor = MaterialTheme.colorScheme.primary,
-                    unselectedIconColor = MaterialTheme.colorScheme.onPrimary,
-                ),
                 icon = {
                     Icon(
                         imageVector = item.icon,
@@ -58,7 +53,6 @@ fun HomeBottomNavigationBar(
                 label = {
                     Text(
                         text = item.name,
-                        color = MaterialTheme.colorScheme.onPrimary
                     )
                 },
             )
