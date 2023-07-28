@@ -9,12 +9,16 @@ import com.crxapplications.wisquiz.flows.stats.presentation.page.StatsPage
 
 @Composable
 fun HomeNavGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = Route.Quizzes.route) {
-        composable(Route.Quizzes.route) {
+    NavHost(
+        navController = navController,
+        route = Route.Home.route,
+        startDestination = Route.Quizzes.route
+    ) {
+        composable(route = Route.Quizzes.route) {
             QuizzesListPage()
         }
 
-        composable(Route.Progress.route) {
+        composable(route = Route.Progress.route) {
             StatsPage()
         }
     }
