@@ -55,6 +55,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.android.material:material:1.9.0")
     val roomVersion = "2.5.2"
     val coreKtxVersion = "1.10.1"
     val kotlinCoroutinesVersion = "1.6.4"
@@ -64,8 +65,10 @@ dependencies {
     val navVersion = "2.6.0"
     val firebaseBomVersion = "32.2.0"
     val hiltVersion = "2.44"
+    val hiltNavigationComposeVersion = "1.0.0"
     val retrofitVersion = "2.9.0"
     val moshiVersion = "1.14.0"
+    val viewModelComposeVersion = "2.6.1"
 
     val jUnitVersion = "4.13.2"
     val extJUnitVersion = "1.1.5"
@@ -87,11 +90,15 @@ dependencies {
     implementation("com.google.firebase:firebase-crashlytics-ktx")
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+    implementation("androidx.hilt:hilt-navigation-compose:$hiltNavigationComposeVersion")
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
     implementation("com.squareup.moshi:moshi:$moshiVersion")
+    implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
     implementation("androidx.room:room-runtime:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$viewModelComposeVersion")
 
     testImplementation("junit:junit:$jUnitVersion")
     androidTestImplementation("androidx.test.ext:junit:$extJUnitVersion")

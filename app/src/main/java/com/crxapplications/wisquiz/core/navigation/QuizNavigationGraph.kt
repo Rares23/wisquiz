@@ -9,8 +9,8 @@ import com.crxapplications.wisquiz.flows.quiz.presentation.page.QuizRunningPage
 import com.crxapplications.wisquiz.flows.quiz.presentation.page.QuizStartPage
 
 fun NavGraphBuilder.quizNavigationGraph(navController: NavController) {
-    navigation(route = Route.Quiz.route, startDestination = Route.QuizStart.route) {
-        composable(route = Route.QuizStart.route) {
+    navigation(route = Route.Quiz.route, startDestination = Route.QuizStart().route) {
+        composable(route = Route.QuizStart().route) {
             QuizStartPage()
         }
 

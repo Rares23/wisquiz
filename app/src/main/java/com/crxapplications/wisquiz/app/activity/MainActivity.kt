@@ -4,8 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.crxapplications.wisquiz.core.navigation.RootNavigationGraph
+import com.crxapplications.wisquiz.core.navigation.Route
+import com.crxapplications.wisquiz.core.navigation.rootNavigationGraph
 import com.crxapplications.wisquiz.ui.theme.WisQuizTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,7 +18,15 @@ class MainActivity : ComponentActivity() {
         setContent {
             WisQuizTheme {
                 val navController: NavHostController = rememberNavController()
-                RootNavigationGraph(navController = navController)
+
+                NavHost(
+                    navController = navController,
+                    route = Route.Root.route,
+                    startDestination = Route.Home.route
+                ) {
+                    rootNavigationGraph(navController = navController)
+                }
+
             }
         }
     }

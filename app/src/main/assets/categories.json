@@ -1,0 +1,50 @@
+[
+  {
+    "id": 9,
+    "slug": "general-knowledge",
+    "title": "General Knowledge",
+    "description": "From current events to random facts, challenge yourself with a wide range of general knowledge questions."
+  },
+  {
+    "id": 23,
+    "slug": "geography",
+    "title": "Geography",
+    "description": "From continents and countries to cities and landmarks, challenge your knowledge of global destinations."
+  },
+  {
+    "id": 23,
+    "slug": "history",
+    "title": "History",
+    "description": "Test your knowledge of significant events that have shaped the course of human history."
+  },
+  {
+    "id": 17,
+    "slug": "science",
+    "title": "Science",
+    "description": "Explore the wonders of the universe and the principles that govern the natural world."
+  },
+  {
+    "id": 18,
+    "slug": "computers-tech",
+    "title": "Computers & Tech",
+    "description": "From computer hardware and software to the oldest and latest digital innovations, put your tech-savviness to the test."
+  },
+  {
+    "id": 11,
+    "slug": "movies",
+    "title": "Movies",
+    "description": "Test your knowledge of classic films, actors, directors, and memorable movie moments."
+  },
+  {
+    "id": 25,
+    "slug": "art",
+    "title": "Art",
+    "description": "From famous artists and art movements to different forms of artistic expression, explore the beauty and significance of art."
+  },
+  {
+    "id": 20,
+    "slug": "mythology",
+    "title": "Mythology",
+    "description": "Enter the realm of myths, legends, and folklore with this captivating quiz category."
+  }
+]

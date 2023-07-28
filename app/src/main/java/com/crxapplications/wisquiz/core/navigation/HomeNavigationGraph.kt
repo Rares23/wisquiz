@@ -1,25 +1,22 @@
 package com.crxapplications.wisquiz.core.navigation
 
-import androidx.compose.runtime.Composable
+import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.crxapplications.wisquiz.flows.quiz.presentation.page.QuizzesListPage
 import com.crxapplications.wisquiz.flows.stats.presentation.page.StatsPage
 
-@Composable
-fun HomeNavGraph(navController: NavHostController) {
-    NavHost(
-        navController = navController,
-        route = Route.Home.route,
-        startDestination = Route.Quizzes.route
-    ) {
-        composable(route = Route.Quizzes.route) {
-            QuizzesListPage()
-        }
+fun NavGraphBuilder.homeNavGraph(
+    rootNavController: NavHostController,
+) {
+    composable(route = Route.Quizzes.route) {
+        QuizzesListPage(onCategoryPress = { id ->
+            //TODO pass id to quiz route
+            rootNavController.navigate(route = Route.Quiz.route)
+        })
+    }
 
-        composable(route = Route.Progress.route) {
-            StatsPage()
-        }
+    composable(route = Route.Progress.route) {
+        StatsPage()
     }
 }
