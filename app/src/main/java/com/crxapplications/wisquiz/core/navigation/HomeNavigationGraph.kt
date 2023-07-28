@@ -11,8 +11,12 @@ fun NavGraphBuilder.homeNavGraph(
 ) {
     composable(route = Route.Quizzes.route) {
         QuizzesListPage(onCategoryPress = { id ->
-            //TODO pass id to quiz route
-            rootNavController.navigate(route = Route.Quiz.route)
+            rootNavController.navigate(
+                route = Route.Quiz.route.replace(
+                    "{categoryId}",
+                    id.toString()
+                )
+            )
         })
     }
 

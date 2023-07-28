@@ -4,6 +4,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun QuizStartPage() {
-    Text(text = "Quiz Start")
+fun QuizStartPage(categoryId: Int) {
+    Text(text = "Build quiz for category id -> $categoryId")
 }
