@@ -73,6 +73,10 @@ dependencies {
     val jUnitVersion = "4.13.2"
     val extJUnitVersion = "1.1.5"
     val espressoCoreVersion = "3.5.1"
+    val mockitoVersion = "4.2.0"
+    val mockitoKotlinVersion = "4.0.0"
+    val androidXTestVersion = "1.5.0"
+    val kotlinxCoroutinesTestVersion = "1.7.3"
 
 
     implementation("androidx.core:core-ktx:$coreKtxVersion")
@@ -97,12 +101,16 @@ dependencies {
     implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
     implementation("androidx.room:room-runtime:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
-    ksp("androidx.room:room-compiler:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$viewModelComposeVersion")
 
     testImplementation("junit:junit:$jUnitVersion")
+    testImplementation("org.mockito:mockito-core:$mockitoVersion")
     androidTestImplementation("androidx.test.ext:junit:$extJUnitVersion")
     androidTestImplementation("androidx.test.espresso:espresso-core:$espressoCoreVersion")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion")
+    testImplementation("androidx.test:core:$androidXTestVersion")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinxCoroutinesTestVersion")
     androidTestImplementation(platform("androidx.compose:compose-bom:$composeBomVersion"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")

@@ -4,6 +4,9 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.AssetManager
+import com.crxapplications.wisquiz.core.data.api.TokenApiService
+import com.crxapplications.wisquiz.core.data.repository.TokenRepository
+import com.crxapplications.wisquiz.core.data.repository.TokenRepositoryImpl
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -48,4 +51,28 @@ class AppModule {
     @Singleton
     @Provides
     fun provideAssetManager(application: Application): AssetManager = application.assets
+
+    @Singleton
+    @Provides
+    fun provideRetrofit(moshi: Moshi): Retrofit =
+        Retrofit.Builder()
+            .baseUrl("https://opentdb.com/api.php")
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .build()
+
+    @Singleton
+    @Provides
+    fun provideTokenApiService(retrofit: Retrofit): TokenApiService =
+        retrofit.create(TokenApiService::class.java)
+
+
+    @Singleton
+    @Provides
+    fun provideTokenRepository(
+        tokenApiService: TokenApiService,
+        sharedPreferences: SharedPreferences,
+    ): TokenRepository = TokenRepositoryImpl(
+        tokenApiService = tokenApiService,
+        sharedPreferences = sharedPreferences
+    )
 }
