@@ -54,14 +54,6 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(moshi: Moshi): Retrofit =
-        Retrofit.Builder()
-            .baseUrl("https://opentdb.com/api.php")
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .build()
-
-    @Singleton
-    @Provides
     fun provideTokenApiService(retrofit: Retrofit): TokenApiService =
         retrofit.create(TokenApiService::class.java)
 
